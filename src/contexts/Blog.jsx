@@ -2,8 +2,8 @@ import { createContext, useContext, useState } from "react";
 
 import posts from "../database/posts";
 
-const blogContext = createContext;
-const blogUpdateContext = createContext;
+const blogContext = createContext();
+const blogUpdateContext = createContext();
 
 export function useBlog() {
   return useContext(blogContext);
