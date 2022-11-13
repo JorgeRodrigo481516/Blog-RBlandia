@@ -1,10 +1,10 @@
+import { BlogProvider } from "./contexts/Blog";
+import { Header } from "./containers/Header";
 
 export default function App() {
-
-
   return (
-    <div className="p-5">
-      Hello World!
-    </div>
-  )
+    <BlogProvider>
+      <Header />
+    </BlogProvider>
+  );
 }
