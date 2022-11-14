@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useCallback, useContext, useState } from "react";
 
 import posts from "../database/posts";
 
@@ -16,9 +16,33 @@ export function useBlogUpdate() {
 export function BlogProvider({ children }) {
   const [data, setData] = useState(posts);
 
+  const updatePosts = useCallback(
+    (id, key, value, post) => {
+      if (id && post) {
+        const updatedPosts = [...data, post];
+
+        setData(updatedPosts);
+      } else if (id && key) {
+        // eslint-disable-next-line array-callback-return, consistent-return
+        const updatedPosts = data.map((item) => {
+          if (item.id === id) {
+            return { ...item, [key]: value };
+          }
+
+          return item;
+        });
+
+        setData(updatedPosts);
+      } else {
+        console.log("aabb", id, post);
+      }
+    },
+    [data]
+  );
+
   return (
     <blogContext.Provider value={data}>
-      <blogUpdateContext.Provider value={setData}>
+      <blogUpdateContext.Provider value={updatePosts}>
         {children}
       </blogUpdateContext.Provider>
     </blogContext.Provider>

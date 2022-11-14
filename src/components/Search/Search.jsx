@@ -3,7 +3,7 @@ import searchIcon from "../../assets/search.svg";
 export default function Search() {
   return (
     // eslint-disable-next-line jsx-a11y/label-has-associated-control
-    <label className="flex max-h-10 cursor-pointer items-center gap-3 rounded-md bg-white bg-opacity-20 p-3 sm:max-h-16 sm:gap-5 sm:p-6">
+    <label className="flex max-h-10 cursor-pointer items-center gap-3 rounded-md bg-white bg-opacity-20 p-3 shadow-sm focus-within:bg-opacity-30 sm:max-h-16 sm:gap-5 sm:p-6">
       <img
         src={searchIcon}
         alt="Search icon"
