@@ -8,7 +8,7 @@ export default function Post({ post }) {
   const updatePost = useBlogUpdate();
 
   return (
-    <article className="rounded-md bg-white p-5 shadow-lg">
+    <article className="rounded-md bg-white p-5 shadow-lg w-[90vw] max-w-4xl">
       <div className="flex justify-between">
         <span className="text-[clamp(14px,5vw,16px)] text-gray">
           {post.date}

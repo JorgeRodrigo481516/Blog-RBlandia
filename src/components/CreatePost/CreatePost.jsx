@@ -38,11 +38,11 @@ export default function CreatePost() {
     });
 
     const newValues = { ...post, id, title, description };
-    console.log(newValues, data);
 
     setPost(newValues);
     updateData(newValues.id, false, false, newValues);
     setPost(initialPost);
+    setIsCreating(false);
   };
 
   useEffect(() => {

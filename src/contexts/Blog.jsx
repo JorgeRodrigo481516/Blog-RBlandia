@@ -17,9 +17,12 @@ export function BlogProvider({ children }) {
   const [data, setData] = useState(posts);
 
   const updatePosts = useCallback(
-    (id, key, value, post) => {
-      if (id && post) {
-        const updatedPosts = [...data, post];
+    (id, key, value, post, replace) => {
+      if(replace) {
+        setData(post)
+      } else if (post) {
+        const updatedPosts = [post, ...data];
+        console.log(updatedPosts)
 
         setData(updatedPosts);
       } else if (id && key) {

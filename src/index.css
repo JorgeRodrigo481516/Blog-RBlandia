@@ -3,3 +3,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+::-webkit-scrollbar {
+  width: 14px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsla(203, 69%, 55%, 0);
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(203, 69%, 55%);
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 6px;
+}
