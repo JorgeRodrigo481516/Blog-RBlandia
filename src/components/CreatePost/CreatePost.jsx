@@ -62,10 +62,11 @@ export default function CreatePost() {
 
   if (!isCreating) {
     return (
-      <button
+      <button 
+        id="create"
         type="button"
         onClick={() => setTimeout(setIsCreating(true), 500)}
-        className="absolute -top-2.5 rotate-90 rounded-[20px] bg-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:scale-105 active:animate-ping"
+        className="absolute -top-2.5 rotate-90 rounded-[20px] bg-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:scale-105 active:animate-ping block"
       >
         <img src={plusIcon} alt="Plus icon" className="" />
       </button>

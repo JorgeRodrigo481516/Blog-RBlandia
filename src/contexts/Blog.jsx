@@ -18,13 +18,12 @@ export function BlogProvider({ children }) {
 
   const updatePosts = useCallback(
     (id, key, value, post, replace) => {
-      if(replace) {
-        setData(post)
+      if (replace) {
+        setData(post.sort((a, b) => b.id - a.id));
       } else if (post) {
         const updatedPosts = [post, ...data];
-        console.log(updatedPosts)
 
-        setData(updatedPosts);
+        setData(updatedPosts.sort((a, b) => b.id - a.id));
       } else if (id && key) {
         // eslint-disable-next-line array-callback-return, consistent-return
         const updatedPosts = data.map((item) => {
@@ -35,9 +34,9 @@ export function BlogProvider({ children }) {
           return item;
         });
 
-        setData(updatedPosts);
+        setData(updatedPosts.sort((a, b) => b.id - a.id));
       } else {
-        console.log("aabb", id, post);
+        console.log("error", id, post);
       }
     },
     [data]
